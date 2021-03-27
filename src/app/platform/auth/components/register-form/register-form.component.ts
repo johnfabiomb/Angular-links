@@ -31,6 +31,7 @@ export class RegisterFormComponent implements OnInit {
       this._app.loading = true;
       this._auth.register(this.form.value).subscribe(
         (res:any)=>{
+          localStorage.setItem('id',res.id);
           ///then we get login to get the token because register doesn't return it
           this._auth.login(this.form.value).subscribe(
             (res:any)=>{

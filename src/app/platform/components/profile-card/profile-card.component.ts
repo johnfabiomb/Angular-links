@@ -22,14 +22,14 @@ export class ProfileCardComponent implements OnInit {
 
   constructor(public _app:AppService, public _auth:AuthService) {
     this._app.loading = true;
-    this._auth.getUser().subscribe(
+    this._auth.getUser(localStorage.getItem('id') ? localStorage.getItem('id') : 1 ).subscribe(
       res=>{
         this.user = res;
         this._app.loading = false;
       }
     )
    }
-   
+
    ngOnInit(): void {
    
   }
