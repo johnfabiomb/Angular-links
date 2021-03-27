@@ -1,0 +1,7 @@
+<div class="card">
+    <div *ngIf='this.user' class="card-body text-center">
+        <img [attr.src]="this.user.avatar" style="max-width: 100%;" class="rounded-circle mb-3" alt="">
+        <h5>{{this.user.name}}</h5>
+        <p>{{this.user.email}}</p>
+    </div>
+</div>

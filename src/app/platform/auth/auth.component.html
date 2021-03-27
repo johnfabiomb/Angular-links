@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row justify-content-end mt-5">
+        <div class="col-6 col-sm-4 col-lg-2">
+            <ng-content select="[header]"></ng-content>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center mt-1">
+        <div class="col-sm-12 col-md-8 col-lg-5">
+            <div class="text-left logo">
+                <img src="assets/img/links.png" alt="">
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ng-content select="[card]"></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

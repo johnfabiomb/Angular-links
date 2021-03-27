@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row justify-content-between mt-5">
+        <div class="col-6">
+            <div class="logo">
+                <img src="assets/img/links.png" alt="">
+            </div>
+        </div>
+        <div class="col-5 col-sm-4 col-md-3  col-lg-2">
+            <button routerLink="/auth/login" style="max-width: 150px;" type="button" class="btn btn-lg btn-outline-primary btn-block">Logout</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center mt-1 mb-5">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+            <app-profile-card></app-profile-card>
+        </div>
+        <div class="col-lg-7 col-md-8 col-sm-12 col-12">
+            <app-form-card #linkForm (addEvent)='saveLinks($event)' ></app-form-card>
+            <ng-container *ngFor='let l of this.links'>
+                <app-link-card [name]='l.name' [url]='l.url' (delete)='deleteLink(l)' ></app-link-card>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
